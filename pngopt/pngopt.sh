@@ -17,7 +17,7 @@ do
         optipng_size="`stat -c"%s" $png`"
 
         [[ "`stat -c"%s" $png`" -eq "$pngout_size" ]] && break
-        $BIN/pngout "$png" -q -y
+        $BIN/pngout "$png" -q -y -knpTc
         pngout_size="`stat -c"%s" $png`"
 
         [[ "`stat -c"%s" $png`" -eq "$advdef_size" ]] && break
