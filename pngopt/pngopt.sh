@@ -24,6 +24,7 @@ do
         $BIN/advdef -z4 "$png" >/dev/null
         advdef_size="`stat -c"%s" "$png"`"
     done
+    $BIN/deflopt -sk "$png"
     $BIN/defluff < "$png" 2>/dev/null > ".$png.tmp.$$" && mv ".$png.tmp.$$" "$png"
     $BIN/deflopt -sk "$png"
     post_size=`stat -c"%s" $png`
